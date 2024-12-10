@@ -1,4 +1,4 @@
-export const fecthEpisode = () => {
+export const fetchEpisode = () => {
    return fetch('https://swapi.dev/api/films')
     .then((resposne) => resposne.json())
     .then((data)=>{
@@ -6,10 +6,3 @@ export const fecthEpisode = () => {
     })
 }
 
-export const fetchHero = (ids) =>{
-    return fetch(`https://swapi.dev/api/people/${ids}/`)
-    .then((response) => response.json())
-    .then((data) => {
-        return data;
-    })
-}
