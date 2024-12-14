@@ -11,3 +11,16 @@
     background-color: rgb(127, 136, 255);
     color:rgb(0, 0, 0);
 }
+
+.character-container{
+
+}
+.character{
+    border: 1px solid brown;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    overflow: hidden;
+    display: flex;
+    color: #23457d;
+}
