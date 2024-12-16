@@ -27,6 +27,16 @@ export default function AppStarWars(){
             })
         };
 
+        const getStatusClasss = (status) =>{
+            switch(status){
+                case "Alive":
+                    return "ch-alive";
+                case "Dead":
+                    return "ch-dead";
+                default:
+                    return "ch-unknown"
+            }
+        }
 
 
     
@@ -43,7 +53,8 @@ export default function AppStarWars(){
                 <div className="character-container">
                     {characterEpisode[episode.id]?.map((character) =>{
                         return (
-                            <div key={character.id} className="episode">
+                            <div key={character.id +":"+ episode.id} className={"character " + getStatusClasss(character.status)}
+                            >
                                 <div className="character-left">
                                     <img src={character.image} alt="" />
                                 </div>
