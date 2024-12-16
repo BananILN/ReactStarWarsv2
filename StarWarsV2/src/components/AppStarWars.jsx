@@ -25,10 +25,8 @@ export default function AppStarWars(){
             .then((data) => hero.push(data));
         });
         setCharacterEpisode({...characterEpisode, [episode.episode_id]: hero})
-        
-    }
-
     
+    }    
     return (
         <>
         {episode.map((episode)=>{
@@ -51,7 +49,6 @@ export default function AppStarWars(){
                                     <div>Цвет глаз : {character.eye_color} </div>
                                     <div>Рост: {character.height} </div>
                                 </div>
-                                
                             </div>
                         )
                     })}
