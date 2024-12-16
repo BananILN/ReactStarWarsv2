@@ -10,8 +10,6 @@ export default function AppStarWars(){
 
     useEffect(()=>{
         fetchEpisode().then((data)=> {
-            // console.log(data);
-            
             setEpisode(data);
             
     }, [])
@@ -24,7 +22,7 @@ export default function AppStarWars(){
             .then((response) => response.json())
             .then((data) => hero.push(data));
         });
-        setCharacterEpisode({...characterEpisode, [episode.episode_id]: hero})
+        setCharacterEpisode({...characterEpisode, [episode.episode_id] : hero})
     
     }    
     return (
@@ -41,7 +39,7 @@ export default function AppStarWars(){
                         return (
                             <div key={character.url + episode.episode_id} className="episode">
                                 <div className="character-left">
-
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/1388px-Star_Wars_Logo.svg.png" alt="" />
                                 </div>
                                 <div className="character-right">
                                     <h3>{character.name}</h3>
