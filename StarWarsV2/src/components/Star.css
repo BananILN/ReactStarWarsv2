@@ -32,3 +32,12 @@ img{
     width: 120px;
     height: 100px;
 }
+
+.character-left{
+    flex: 2;
+}
+
+.character-right{
+    flex: 3;
+    padding: 10px;
+}
