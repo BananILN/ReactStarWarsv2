@@ -7,6 +7,7 @@ export default function AppStarWars(){
 
     const [episode,setEpisode] = useState([])
     const [characterEpisode, setCharacterEpisode] = useState({})
+    const [isLoading, setLoading] = useState({})
 
     useEffect(()=>{
         fetchEpisode().then((data)=> {
@@ -21,9 +22,12 @@ export default function AppStarWars(){
                 return id;
             });
 
+            setLoading({...isLoading, [episode.id] : true})
+
             fetchHero(ids).then((data)=>{
                 console.log(data);
                 setCharacterEpisode({...characterEpisode, [episode.id] :data })
+                setLoading({...isLoading, [episode.id] : false})
             })
         };
 
@@ -51,6 +55,9 @@ export default function AppStarWars(){
 
                 <h2>Title:{episode.name}</h2>
                 <div className="character-container">
+                    {isLoading[episode.id] && (
+                        <div className="loading">Loading...</div>
+                    )}
                     {characterEpisode[episode.id]?.map((character) =>{
                         return (
                             <div key={character.id +":"+ episode.id} className={"character " + getStatusClasss(character.status)}
