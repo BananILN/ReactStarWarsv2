@@ -49,7 +49,7 @@ export default function AppStarWars(){
              key={episode.id}
              onClick={() => handleEpisodeClick(episode)}>
 
-                <h2>Title:{episode.title}</h2>
+                <h2>Title:{episode.name}</h2>
                 <div className="character-container">
                     {characterEpisode[episode.id]?.map((character) =>{
                         return (
