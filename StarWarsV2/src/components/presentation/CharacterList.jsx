@@ -7,8 +7,8 @@ export const CharacterList = ({characters, isLoading}) =>{
 
     return (
         <div className="character-container">
-            {characters.map((character) => (
-                <CharacterItem key={character.id} character={character} />
+            {characters.map((character)=>(
+                <CharacterItem key={character.id} character={character}/>
             ))}
         </div>
     )

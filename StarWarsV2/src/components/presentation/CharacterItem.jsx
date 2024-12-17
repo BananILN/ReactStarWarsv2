@@ -1,4 +1,4 @@
-export const CharacterItem = ({character})=>{
+export const CharacterItem = ({ character })=>{
     const getStatusClasss = (status) =>{
         switch(status){
             case "Alive":
@@ -9,12 +9,12 @@ export const CharacterItem = ({character})=>{
                 return "ch-unknown"
         }
     }
-    
+
     return(
-        <div key={character.id +":"+ episode.id} className={"character " + getStatusClasss(character.status)}
+        <div className={"character " + getStatusClasss(character.status)}
         >
             <div className="character-left">
-                <img src={character.image} alt="" />
+                <img src={character.image} alt={character.name} />
             </div>
             <div className="character-right">
                 <h3>{character.name}</h3>

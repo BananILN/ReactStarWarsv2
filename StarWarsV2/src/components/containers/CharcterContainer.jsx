@@ -1,9 +1,9 @@
-import { useEffect } from "react";
+import { useEffect,useState } from "react";
 import { fetchHero } from "../../api";
 import { CharacterList } from "../presentation/CharacterList";
 
 export const CharacterContainer =({ids}) =>{
-    const [character, setChatacters] = useState([]);
+    const [characters, setChatacters] = useState([]);
     const [isLoading,setLoading] = useState(true);
 
     useEffect(()=>{
@@ -15,5 +15,5 @@ export const CharacterContainer =({ids}) =>{
         })
     },[ids])
 
-    return <CharacterList character={character} isLoading={isLoading}/>
+    return <CharacterList characters={characters} isLoading={isLoading}/>
 }

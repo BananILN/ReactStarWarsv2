@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useEffect,useState } from "react"
 import { fetchEpisode } from "../../api"
 import { EpisodeList } from "../presentation/EpisodeList"
 
